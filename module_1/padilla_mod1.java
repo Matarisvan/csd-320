@@ -31,4 +31,4 @@ With eq2 we use the "int" variable which removes the ability to have decimals th
     the numbers are now not the exact numbers that we need so the equation will not be less accurate.
 Using float is a better method for solving equations since it allows for decimals to exist which gives you the accurate answer you are looking for
     It is a bit more tedious since you have to add "f" after each float variable but it is the more accurate response.
- */
+ */ 
