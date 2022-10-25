@@ -15,7 +15,7 @@ Q is the results in Joules
 // import Scanner function for user input
 import java.util.Scanner;
 
-public class padilla_mod2{
+public class padilla_mod2 {
     public static void main(String[] args) {
         try (Scanner myObj = new Scanner(System.in)) {
             
