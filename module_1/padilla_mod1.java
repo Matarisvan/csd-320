@@ -17,7 +17,7 @@ public class padilla_mod1 {
         System.out.println("This first one is:");
         System.out.println(" 4 x ( 1.0 - 1.0 / 3.0 + 1.0 / 5.0 - 1.0 / 7.0 + 1.0 / 9.0 - 1.0 / 11.0 + 1.0 / 13.0 )");
         System.out.print("The answer for this one is: ");
-        double eq1 = 4 * ( 1.01 - 1.0 / 3.0 + 1.0 / 5.0 - 1.0 / 7.0 + 1.0 / 9.0 - 1.0 / 11.0 + 1.0 / 13.0 );
+        float eq1 = 4 * ( 1.01f - 1.0f / 3.0f + 1.0f / 5.0f - 1.0f / 7.0f + 1.0f / 9.0f - 1.0f / 11.0f + 1.0f / 13.0f );
         System.out.println(eq1);
         System.out.println();
         System.out.println("The second equation is:");
