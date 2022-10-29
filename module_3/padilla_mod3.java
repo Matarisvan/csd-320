@@ -12,9 +12,89 @@ Next, the program displays a clear readable message displaying both the computer
 
 package csd_320.module_3;
 
+// import Scanner function for user input
+import java.util.Scanner;
+
 public class padilla_mod3 {
     public static void main(String[] args) {
-        System.out.println("Welcome to Rock, Paper, Scissors!");
-
+        try (Scanner myObj = new Scanner(System.in)) {
+            
+            // Welcome Message 
+            System.out.println("\nWelcome to Rock, Paper, Scissors!\n");
+            System.out.println("Please make a selection:\n1 for Rock\n2 for Paper\n3 for Scissors");
+            
+            // Get user selection
+            int userSel = myObj.nextInt();
+            switch (userSel) {
+                case 1:
+                System.out.println("\nYou have chosen Rock");
+                break;
+                case 2:
+                System.out.println("\nYou have chosen Paper");
+                break;
+                case 3:
+                System.out.println("\nYou have chosen Scissors");
+                break;
+                }
+            
+            // Get cpu selection
+            int cpuSel = (int)(Math.random() * 3);
+            // System.out.println(cpuSel); // optional to see what cpu number
+            switch (cpuSel) {
+                case 0:
+                System.out.println("CPU has chosen Rock\n");
+                break;
+                case 1:
+                System.out.println("CPU has chosen Paper\n");
+                break;
+                case 2:
+                System.out.println("CPU has chosen Scissors\n");
+                break;
+            }
+            // Calculate Results
+            switch (userSel) {
+                
+                // Different scenarios for Rock
+                case 1:
+                    if (cpuSel == 0) {
+                        System.out.println("You have tied!");
+                        break;
+                    } else if (cpuSel == 1) {
+                        System.out.println("You have lost!");
+                        break;
+                    } else if (cpuSel == 2) {
+                        System.out.println("Congratulations! You have won!");
+                        break;
+                    }
+                
+                // Different scenarios for Paper
+                case 2:
+                    if (cpuSel == 0) {
+                        System.out.println("Congratulations! You have Won!");
+                        break;
+                    } else if (cpuSel == 1) {
+                        System.out.println("You have tied!");
+                        break;
+                    } else if (cpuSel == 2) {
+                        System.out.println("You have lost!");
+                        break;
+                    }
+                
+                // Different scenarios for Scissors
+                    case 3:
+                    if (cpuSel == 0) {
+                        System.out.println("You have lost!");
+                        break;
+                    } else if (cpuSel == 1) {
+                        System.out.println("Congratulations! You have won!");
+                        break;
+                    } else if (cpuSel == 2) {
+                        System.out.println("You have tied!");
+                        break;
+                    }
+            }
+            System.out.println("");       
+        }
     }
 }
+
