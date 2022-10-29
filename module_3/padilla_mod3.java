@@ -43,7 +43,6 @@ public class padilla_mod3 {
                 
                 // Get cpu selection
                 int cpuSel = (int)(Math.random() * 3);
-                // System.out.println(cpuSel); // optional to see what cpu number
                 switch (cpuSel) {
                     case 0:
                     System.out.println("CPU has chosen Rock\n");
@@ -97,6 +96,8 @@ public class padilla_mod3 {
                             break;
                         }
                 }
+                
+                // Play again/Exit loop
                 System.out.println("Would you like to play again?\n1 = Yes\n2 = No");
                 int answer = myObj.nextInt();
                 switch (answer) {
