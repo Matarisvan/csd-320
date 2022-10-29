@@ -19,81 +19,95 @@ public class padilla_mod3 {
     public static void main(String[] args) {
         try (Scanner myObj = new Scanner(System.in)) {
             
-            // Welcome Message 
-            System.out.println("\nWelcome to Rock, Paper, Scissors!\n");
-            System.out.println("Please make a selection:\n1 for Rock\n2 for Paper\n3 for Scissors");
+            // Program Loop
+            int game = 0 ;
+            do {
             
-            // Get user selection
-            int userSel = myObj.nextInt();
-            switch (userSel) {
-                case 1:
-                System.out.println("\nYou have chosen Rock");
-                break;
-                case 2:
-                System.out.println("\nYou have chosen Paper");
-                break;
-                case 3:
-                System.out.println("\nYou have chosen Scissors");
-                break;
-                }
-            
-            // Get cpu selection
-            int cpuSel = (int)(Math.random() * 3);
-            // System.out.println(cpuSel); // optional to see what cpu number
-            switch (cpuSel) {
-                case 0:
-                System.out.println("CPU has chosen Rock\n");
-                break;
-                case 1:
-                System.out.println("CPU has chosen Paper\n");
-                break;
-                case 2:
-                System.out.println("CPU has chosen Scissors\n");
-                break;
-            }
-            // Calculate Results
-            switch (userSel) {
+                // Welcome Message 
+                System.out.println("\nWelcome to Rock, Paper, Scissors!\n");
+                System.out.println("Please make a selection:\n1 for Rock\n2 for Paper\n3 for Scissors");
                 
-                // Different scenarios for Rock
-                case 1:
-                    if (cpuSel == 0) {
-                        System.out.println("You have tied!");
-                        break;
-                    } else if (cpuSel == 1) {
-                        System.out.println("You have lost!");
-                        break;
-                    } else if (cpuSel == 2) {
-                        System.out.println("Congratulations! You have won!");
-                        break;
-                    }
-                
-                // Different scenarios for Paper
-                case 2:
-                    if (cpuSel == 0) {
-                        System.out.println("Congratulations! You have Won!");
-                        break;
-                    } else if (cpuSel == 1) {
-                        System.out.println("You have tied!");
-                        break;
-                    } else if (cpuSel == 2) {
-                        System.out.println("You have lost!");
-                        break;
-                    }
-                
-                // Different scenarios for Scissors
+                // Get user selection
+                int userSel = myObj.nextInt();
+                switch (userSel) {
+                    case 1:
+                    System.out.println("\nYou have chosen Rock");
+                    break;
+                    case 2:
+                    System.out.println("\nYou have chosen Paper");
+                    break;
                     case 3:
-                    if (cpuSel == 0) {
-                        System.out.println("You have lost!");
-                        break;
-                    } else if (cpuSel == 1) {
-                        System.out.println("Congratulations! You have won!");
-                        break;
-                    } else if (cpuSel == 2) {
-                        System.out.println("You have tied!");
-                        break;
+                    System.out.println("\nYou have chosen Scissors");
+                    break;
                     }
-            }
-            System.out.println("");       
+                
+                // Get cpu selection
+                int cpuSel = (int)(Math.random() * 3);
+                // System.out.println(cpuSel); // optional to see what cpu number
+                switch (cpuSel) {
+                    case 0:
+                    System.out.println("CPU has chosen Rock\n");
+                    break;
+                    case 1:
+                    System.out.println("CPU has chosen Paper\n");
+                    break;
+                    case 2:
+                    System.out.println("CPU has chosen Scissors\n");
+                    break;
+                }
+                // Calculate Results
+                switch (userSel) {
+                    
+                    // Different scenarios for Rock
+                    case 1:
+                        if (cpuSel == 0) {
+                            System.out.println("You have tied!");
+                            break;
+                        } else if (cpuSel == 1) {
+                            System.out.println("You have lost!");
+                            break;
+                        } else if (cpuSel == 2) {
+                            System.out.println("Congratulations! You have won!");
+                            break;
+                        }
+                    
+                    // Different scenarios for Paper
+                    case 2:
+                        if (cpuSel == 0) {
+                            System.out.println("Congratulations! You have Won!");
+                            break;
+                        } else if (cpuSel == 1) {
+                            System.out.println("You have tied!");
+                            break;
+                        } else if (cpuSel == 2) {
+                            System.out.println("You have lost!");
+                            break;
+                        }
+                    
+                    // Different scenarios for Scissors
+                        case 3:
+                        if (cpuSel == 0) {
+                            System.out.println("You have lost!");
+                            break;
+                        } else if (cpuSel == 1) {
+                            System.out.println("Congratulations! You have won!");
+                            break;
+                        } else if (cpuSel == 2) {
+                            System.out.println("You have tied!");
+                            break;
+                        }
+                }
+                System.out.println("Would you like to play again?\n1 = Yes\n2 = No");
+                int answer = myObj.nextInt();
+                switch (answer) {
+                    case 1:
+                        break;
+                    case 2:
+                        System.out.println("\nThank You For Playing!\n");
+                        game++;
+                        break;
+                }
+            } while(game == 0);
         }
     }
 }
