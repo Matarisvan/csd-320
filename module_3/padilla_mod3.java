@@ -19,15 +19,16 @@ public class padilla_mod3 {
     public static void main(String[] args) {
         try (Scanner myObj = new Scanner(System.in)) {
             
+            // Welcome Message 
+            System.out.println("\nWelcome to Rock, Paper, Scissors!");
+            
+            
             // Program Loop
             int game = 0 ;
             do {
-            
-                // Welcome Message 
-                System.out.println("\nWelcome to Rock, Paper, Scissors!\n");
-                System.out.println("Please make a selection:\n1 for Rock\n2 for Paper\n3 for Scissors");
-                
+
                 // Get user selection and input loop
+                System.out.println("\nPlease make a selection:\n1 for Rock\n2 for Paper\n3 for Scissors");
                 int userSel;
                 do {
                     userSel = myObj.nextInt();
@@ -117,10 +118,14 @@ public class padilla_mod3 {
                 int answer = myObj.nextInt();
                 switch (answer) {
                     case 1:
+                        System.out.println("Prepare for Battle!");
                         break;
                     case 2:
                         System.out.println("\nThank You For Playing!\n");
                         game++;
+                        break;
+                    default:
+                        System.out.println("Your incorrect answer has led you to another battle!");
                         break;
                 }
             } while(game == 0);
