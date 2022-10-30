@@ -27,8 +27,22 @@ public class padilla_mod3 {
                 System.out.println("\nWelcome to Rock, Paper, Scissors!\n");
                 System.out.println("Please make a selection:\n1 for Rock\n2 for Paper\n3 for Scissors");
                 
-                // Get user selection
-                int userSel = myObj.nextInt();
+                // Get user selection and input loop
+                int userSel;
+                do {
+                    userSel = myObj.nextInt();
+                    if (userSel == 1) {
+                        break;
+                    } else if (userSel == 2) {
+                        break;
+                    } else if (userSel == 3){
+                        break;
+                    } else {
+                        System.out.println("Please select from the following:\n1 for Rock\n2 for Paper\n3 for Scissors");
+                        userSel = 0;
+                    }
+                } while (userSel == 0);
+                
                 switch (userSel) {
                     case 1:
                     System.out.println("\nYou have chosen Rock");
@@ -39,7 +53,7 @@ public class padilla_mod3 {
                     case 3:
                     System.out.println("\nYou have chosen Scissors");
                     break;
-                    }
+                }
                 
                 // Get cpu selection
                 int cpuSel = (int)(Math.random() * 3);
@@ -54,6 +68,7 @@ public class padilla_mod3 {
                     System.out.println("CPU has chosen Scissors\n");
                     break;
                 }
+                
                 // Calculate Results
                 switch (userSel) {
                     
@@ -98,7 +113,7 @@ public class padilla_mod3 {
                 }
                 
                 // Play again/Exit loop
-                System.out.println("Would you like to play again?\n1 = Yes\n2 = No");
+                System.out.println("\nWould you like to play again?\n1 = Yes\n2 = No");
                 int answer = myObj.nextInt();
                 switch (answer) {
                     case 1:
