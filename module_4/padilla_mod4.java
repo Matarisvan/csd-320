@@ -27,10 +27,20 @@ public class padilla_mod4 {
             // Get second String from user
             System.out.println("\nPlease enter your second line of text:");
             String ans2 = input.nextLine();
+            System.out.println();
 
-            // Print user input for testing purposes -- not in final version
-            System.out.println("\nfor ans1 you entered: " + ans1);
-            System.out.println("for ans2 you entered: " + ans2);
+            // Compare the two Strings
+            if (ans2.indexOf(ans1) == -1) {
+                System.out.println("Line 1 is not a substring of Line 2");
+            } else {
+                System.out.println("Line 1 is indeed a substring of Line 2 and can be found at location " + ans2.indexOf(ans1));
+            }
+            
+            if (ans1.indexOf(ans2) == -1) {
+                System.out.println("Line 2 is not a substring of Line 1");
+            } else {
+                System.out.println("Line 2 is indeed a substring of Line 2 and can be found at location " + ans1.indexOf(ans2));
+            }
         }
     }
 }
