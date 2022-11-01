@@ -43,7 +43,7 @@ public class padilla_mod4 {
                 if (ans1.indexOf(ans2) == -1) {
                     System.out.println("Line 2 is not a substring of Line 1");
                 } else {
-                    System.out.println("Line 2 is indeed a substring of Line 2 and can be found at location " + ans1.indexOf(ans2));
+                    System.out.println("Line 2 is indeed a substring of Line 1 and can be found at location " + ans1.indexOf(ans2));
                 }
 
                 // Exit Loop
@@ -63,7 +63,7 @@ public class padilla_mod4 {
                         System.out.println("Please select an option\nY = Yes\nN = No");
                     }
                 } while (exit == 0);
-                
+
             } while(question == 0);
         }
     }
