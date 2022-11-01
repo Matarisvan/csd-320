@@ -10,7 +10,7 @@ Next, the program displays a clear readable message displaying both the computer
 */
 
 
-package csd_320.module_3;
+package module_3;
 
 // import Scanner function for user input
 import java.util.Scanner;
