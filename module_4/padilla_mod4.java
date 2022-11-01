@@ -20,27 +20,51 @@ public class padilla_mod4 {
             // Welcome Message
             System.out.println("\nWelcome to Mod 4! Today we will be testing Strings to see if one is a substring of the other.");
             
-            // Get first String from user
-            System.out.print("\nPlease enter your first line of text:\n");
-            String ans1 = input.nextLine();
+            // Program Loop
+            int question = 0;
+            String answer;
+            do {
+                // Get first String from user
+                System.out.print("\nPlease enter your first line of text:\n");
+                String ans1 = input.nextLine();
 
-            // Get second String from user
-            System.out.println("\nPlease enter your second line of text:");
-            String ans2 = input.nextLine();
-            System.out.println();
+                // Get second String from user
+                System.out.println("\nPlease enter your second line of text:");
+                String ans2 = input.nextLine();
+                System.out.println();
 
-            // Compare the two Strings
-            if (ans2.indexOf(ans1) == -1) {
-                System.out.println("Line 1 is not a substring of Line 2");
-            } else {
-                System.out.println("Line 1 is indeed a substring of Line 2 and can be found at location " + ans2.indexOf(ans1));
-            }
-            
-            if (ans1.indexOf(ans2) == -1) {
-                System.out.println("Line 2 is not a substring of Line 1");
-            } else {
-                System.out.println("Line 2 is indeed a substring of Line 2 and can be found at location " + ans1.indexOf(ans2));
-            }
+                // Compare the two Strings
+                if (ans2.indexOf(ans1) == -1) {
+                    System.out.println("Line 1 is not a substring of Line 2");
+                } else {
+                    System.out.println("Line 1 is indeed a substring of Line 2 and can be found at location " + ans2.indexOf(ans1));
+                }
+                
+                if (ans1.indexOf(ans2) == -1) {
+                    System.out.println("Line 2 is not a substring of Line 1");
+                } else {
+                    System.out.println("Line 2 is indeed a substring of Line 2 and can be found at location " + ans1.indexOf(ans2));
+                }
+
+                // Exit Loop
+                System.out.println("\nWould you like to test 2 more text lines?\nY = Yes\nN = No");
+                int exit = 0;
+                do{
+                    answer = input.nextLine();
+                    if (answer.equalsIgnoreCase("y")) {
+                        exit++;
+                        break;
+                    } else if (answer.equalsIgnoreCase("n")) {
+                        System.out.println("\nHave a wonderful day!\n");
+                        exit++;
+                        question++;
+                        break;
+                    } else {
+                        System.out.println("Please select an option\nY = Yes\nN = No");
+                    }
+                } while (exit == 0);
+                
+            } while(question == 0);
         }
     }
 }
