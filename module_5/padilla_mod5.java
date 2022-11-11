@@ -56,8 +56,12 @@ public class padilla_mod5 {
                 // Running the equations
                 switch (resp) {
                     case 1:
-                        double eq1;
-                        do  {
+                        //double eq1;
+                        for (sum = 0; sum < 99; sum =+ 2) {
+                            System.out.println(sum);
+                        }
+                        
+                        /*do  {
                             eq1 = (numer / denom1);
                             sum += eq1;
                             System.out.println(sum);
@@ -68,6 +72,7 @@ public class padilla_mod5 {
                                 break;
                             }
                         } while (denom1 <= 99);
+                        */
 
                     case 2:
                         double eq2;
@@ -78,6 +83,24 @@ public class padilla_mod5 {
 
 
                 }
+
+                // Program Loop
+                String exit;
+                int exx = 0;
+                System.out.println("Would you like to run the Program again?\nY = Yes\nN = No");
+                do {
+                    exit = input.nextLine();
+                    if (exit.equalsIgnoreCase("y")) {
+                        exx++;
+                        break;
+                    } else if (exit.equalsIgnoreCase("n")) {
+                        exx++;
+                        mod5++;
+                        break;
+                    } else {
+                        System.out.println("Please select an option\nY = Rerun the Program\nN = Exit");
+                    }
+                } while (exx == 0);
 
             } while (mod5 == 0);            
         }
