@@ -30,11 +30,12 @@ public class padilla_mod5 {
 
             // Program Loop
             int mod5 = 0;
+            String exit;
             do {
                 
                 // Menu Loop
                 System.out.println("Which equation would you like to run?\n1 = Equation 1\n2 = Equation 2");
-                int resp = 0;
+                int resp;
                 do {
                     resp = input.nextInt();
                     if (resp == 1) {
@@ -51,54 +52,62 @@ public class padilla_mod5 {
                 double numer = 1d;
                 double denom1 = 3d;
                 double denom2 = 99d;
-                double sum = 0d;
+                double sum;
+                double total = 0d;
 
                 // Running the equations
                 switch (resp) {
+                    
+                    // Equation 1
                     case 1:
-                        //double eq1;
-                        for (sum = 0; sum < 99; sum =+ 2) {
-                            System.out.println(sum);
-                        }
-                        
-                        /*do  {
-                            eq1 = (numer / denom1);
-                            sum += eq1;
-                            System.out.println(sum);
-                            denom1 += 2;
-                            if (denom1 <= 99) {
-                                continue;
-                            } else {
-                                break;
-                            }
-                        } while (denom1 <= 99);
-                        */
-
-                    case 2:
-                        double eq2;
+                        int denom11 = 0;
                         do {
-                            eq2 = (numer / denom2);
-                            System.out.println(eq2);
-                        } while (denom1 > 2);
+                            sum = numer / denom1;
+                            total += sum;
+                            System.out.println(numer + " divided by " + denom1 + " = " + total + "\nPlus: ");
+                            denom1 += 2d;
+                            if (denom1 > 99d) {
+                                denom11++;
+                                break;
+                            } else {
+                                continue;
+                            }
+                        } while (denom11 == 0);
+
+                    // Equation 2
+                    case 2:
+                        int denom22 = 0;
+                        do {
+                            sum = numer / denom2;
+                            total += sum;
+                            System.out.println(numer + " divided by " + denom2 + " = " + total + "\nMinus: ");
+                            denom2 -= 2d;
+                            if (denom2 < 2d) {
+                                denom22++;
+                                break;
+                            } else {
+                                continue;
+                            }
+                        } while (denom22 == 0);
+                       
 
 
                 }
 
-                // Program Loop
-                String exit;
+                // Program Reloop
                 int exx = 0;
-                System.out.println("Would you like to run the Program again?\nY = Yes\nN = No");
                 do {
                     exit = input.nextLine();
                     if (exit.equalsIgnoreCase("y")) {
                         exx++;
                         break;
                     } else if (exit.equalsIgnoreCase("n")) {
+                        System.out.println("\nThank you for trying out this program!\n");
                         exx++;
                         mod5++;
                         break;
                     } else {
-                        System.out.println("Please select an option\nY = Rerun the Program\nN = Exit");
+                        System.out.println("\nPlease select an option\nY = Rerun the Program\nN = Exit");
                     }
                 } while (exx == 0);
 
