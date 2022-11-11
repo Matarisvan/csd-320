@@ -35,63 +35,50 @@ public class padilla_mod5 {
                 
                 // Menu Loop
                 System.out.println("Which equation would you like to run?\n1 = Equation 1\n2 = Equation 2");
-                int resp;
+                int userSel;
                 do {
-                    resp = input.nextInt();
-                    if (resp == 1) {
+                    userSel = input.nextInt();
+                    if (userSel == 1) {
                         break;
-                    } else if (resp == 2) {
+                    } else if (userSel == 2) {
                         break;
                     } else {
                         System.out.println("Please select from the following:\n1 = Equation 1\n2 = Equation 2");
-                        resp = 0;
+                        userSel = 0;
                     }
-                } while(resp == 0);
+                } while(userSel == 0);
 
                 // Setting numerator, denominator, and sum
                 double numer = 1d;
                 double denom1 = 3d;
                 double denom2 = 99d;
-                double sum;
-                double total = 0d;
+                double sum1;
+                double sum2;
+                double total1 = 0d;
+                double total2 = 0d;
 
                 // Running the equations
-                switch (resp) {
+                switch (userSel) {
                     
                     // Equation 1
                     case 1:
-                        int denom11 = 0;
+                        //int denom11 = 0;
                         do {
-                            sum = numer / denom1;
-                            total += sum;
-                            System.out.println(numer + " divided by " + denom1 + " = " + total + "\nPlus: ");
+                            sum1 = numer / denom1;
+                            total1 += sum1;
+                            System.out.println(numer + " divided by " + denom1 + " = " + total1 + "\nPlus: ");
                             denom1 += 2d;
-                            if (denom1 > 99d) {
-                                denom11++;
-                                break;
-                            } else {
-                                continue;
-                            }
-                        } while (denom11 == 0);
+                        } while (denom1 <= 100);
 
                     // Equation 2
                     case 2:
-                        int denom22 = 0;
+                        //int denom22 = 0;
                         do {
-                            sum = numer / denom2;
-                            total += sum;
-                            System.out.println(numer + " divided by " + denom2 + " = " + total + "\nMinus: ");
+                            sum2 = numer / denom2;
+                            total2 += sum2;
+                            System.out.println(numer + " divided by " + denom2 + " = " + total2 + "\nPlus: ");
                             denom2 -= 2d;
-                            if (denom2 < 2d) {
-                                denom22++;
-                                break;
-                            } else {
-                                continue;
-                            }
-                        } while (denom22 == 0);
-                       
-
-
+                        } while (denom2 >= 2);
                 }
 
                 // Program Reloop
