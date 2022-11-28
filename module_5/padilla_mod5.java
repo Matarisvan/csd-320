@@ -20,7 +20,7 @@ public class padilla_mod5 {
         try (Scanner input = new Scanner(System.in)) {
 
             // Welcome Message
-            System.out.println("Hello and Welcome to Module 5!\nWe will use a loop to display 2 math operations.\nOne will be displayed in smaller to larger and the other from larger to smaller!");
+            System.out.println("\nHello and Welcome to Module 5!\nWe will use a loop to display 2 math operations.\nOne will be displayed in smaller to larger and the other from larger to smaller!");
             
             // First equation
             System.out.println("\nThe first equation is:\n1/3.0 + 1/5.0 + 1/7.0 + ··· + 1/95.0 + 1/97.0 + 1/99.0");
@@ -34,7 +34,7 @@ public class padilla_mod5 {
             do {
                 
                 // Menu Loop
-                System.out.println("Which equation would you like to run?\n1 = Equation 1\n2 = Equation 2");
+                System.out.println("\nWhich equation would you like to run?\n1 = Equation 1\n2 = Equation 2");
                 int userSel;
                 do {
                     userSel = input.nextInt();
@@ -61,15 +61,19 @@ public class padilla_mod5 {
                 switch (userSel) {
                     
                     // Equation 1
-                    case 1:
-                        //int denom11 = 0;
+                    case 1:                        
                         do {
                             sum1 = numer / denom1;
                             total1 += sum1;
-                            System.out.println(numer + " divided by " + denom1 + " = " + total1 + "\nPlus: ");
+                            System.out.println(numer + " divided by " + denom1 + " = " + total1);
                             denom1 += 2d;
+                            if (denom1 < 100) {
+                                System.out.println("Plus: ");
+                            } else {
+                                System.out.println(" ");
+                            }
                         } while (denom1 <= 100);
-                        break;
+                    break;
 
                     // Equation 2
                     case 2:
@@ -101,8 +105,9 @@ public class padilla_mod5 {
 
             } while (mod5 == 0);            
         }
+        
         catch (Exception e) {
-            System.out.println("Something has gone wrong my friend :o");
+            System.out.println("\nSomething has gone wrong my friend :o\n");
         }
     }
 }
