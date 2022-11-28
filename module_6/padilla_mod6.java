@@ -15,65 +15,56 @@
 
 package module_6;
 
-import java.util.Scanner;
-
 public class padilla_mod6 {
     public static void main(String[] args) {
-        try (Scanner input = new Scanner(System.in)) {
 
-            // Welcome Message
-            System.out.println("\nWelcome to Module 6!\nWe will be using nested for loops to display a pyramid\n");
-            
-            
-              // Declare variables
-              int row = 6;
-              int num;
-              int i;
-              int j;
- 
-              // For
-              for(i = 0; i <= row; i++) {
-                num = 0;
-
-                // Spaces on left
-                for (j = i; j < row; j++) {
-                  System.out.print("   ");
-                }
-                // Equation 1
-                for (j = 0; j < i; j++) {
-                  System.out.printf("%3d" , (int)Math.pow(2 , num));
-                  num++;
-                }
-                
-                // Equation 2
-                for (j = 0; j <= i; j++) {
-                  System.out.printf("%3d" , (int)Math.pow(2 , num));
-                  num--;
-                }
-                
-                // Spaces on right
-                for (j = i; j <= row; j++) {
-                  System.out.print("   ");
-                }
-              
-                // Print "@" at the end of the line
-                System.out.print("@");
-                
-                // Print next iteration on new line
-                System.out.println(); 
-              }
-
-              
-            // Print blank line at end of Program for aesthetics
-            System.out.println("\nThank you for trying this Program out!\n");
-        }
+      // Welcome Message
+      System.out.println("\nWelcome to Module 6!\nWe will be using nested for loops to display a pyramid\n");    
         
-        catch (Exception e) {
-          System.out.println("An error has occured my friend :o");
-        }
+        // Declare variables
+        int row = 6;
+        int num;
+        int i;
+        int j;
+
+        // Outer for loop
+        for(i = 0; i <= row; i++) {
+          num = 0;
+
+          // Inner for loops
+          
+          // Spaces on left
+          for (j = i; j < row; j++) {
+            System.out.print("   ");
+          }
+          // Equation 1
+          for (j = 0; j < i; j++) {
+            System.out.printf("%3d" , (int)Math.pow(2 , num));
+            num++;
+          }
+            
+          // Equation 2
+          for (j = 0; j <= i; j++) {
+            System.out.printf("%3d" , (int)Math.pow(2 , num));
+            num--;
+          }
+            
+          // Spaces on right
+          for (j = i; j <= row; j++) {
+            System.out.print("   ");
+          }
         
-    }
-    
+          // Print "@" at the end of the line
+          System.out.print("@");
+          
+          // Print next iteration on new line
+          System.out.println(); 
+        } 
+      
+        // Final Message
+      System.out.println("\nThank you for trying this Program out!\n");
+
+    } 
 }
 
 
