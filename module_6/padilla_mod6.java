@@ -22,36 +22,38 @@ public class padilla_mod6 {
         try (Scanner input = new Scanner(System.in)) {
 
             // Welcome Message
-            System.out.println("\nWelcome to Module 6!\n");
+            System.out.println("\nWelcome to Module 6!\nWe will be using nested for loops to display a pyramid\n");
+            
             
               // Declare variables
               int row = 6;
-              int num = 0;
+              int num;
               int i;
               int j;
  
               // For
               for(i = 0; i <= row; i++) {
+                num = 0;
 
                 // Spaces on left
                 for (j = i; j < row; j++) {
-                  System.out.print("  ");
+                  System.out.print("   ");
                 }
                 // Equation 1
                 for (j = 0; j < i; j++) {
-                  System.out.printf("%2d" , (int)Math.pow(2 , num));
+                  System.out.printf("%3d" , (int)Math.pow(2 , num));
                   num++;
                 }
                 
                 // Equation 2
                 for (j = 0; j <= i; j++) {
-                  System.out.printf("%2d" , (int)Math.pow(2 , num));
+                  System.out.printf("%3d" , (int)Math.pow(2 , num));
                   num--;
                 }
                 
                 // Spaces on right
                 for (j = i; j <= row; j++) {
-                  System.out.print("  ");
+                  System.out.print("   ");
                 }
               
                 // Print "@" at the end of the line
@@ -62,10 +64,8 @@ public class padilla_mod6 {
               }
 
               
-                 
-            
             // Print blank line at end of Program for aesthetics
-            System.out.println();
+            System.out.println("\nThank you for trying this Program out!\n");
         }
         
         catch (Exception e) {
@@ -78,33 +78,3 @@ public class padilla_mod6 {
 
 
 
-
-/*
- * // Declaring formula variables
-            int row;
-            int column;
-            int space;
-
-            // Formula
-            for (row = 1; row <= 7; row++) {
-              
-              // Spaces on the left
-              for(space = 7; space > row; --space) {
-                System.out.print(" ");
-              }
-              
-              // Equation 1
-              for(column = 1; column <= row; column++) {
-                System.out.print(column + " ");
-              }
-
-              // Equation 2
-              for (column = 1; column <= row; column++) {
-                System.out.print(column + " ");
-              }
-
-              // Spaces on the right
-              for (space = 7; space > row; space--) {
-                System.out.print(" ");
-              }
- */
