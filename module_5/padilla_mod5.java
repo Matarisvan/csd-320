@@ -69,6 +69,7 @@ public class padilla_mod5 {
                             System.out.println(numer + " divided by " + denom1 + " = " + total1 + "\nPlus: ");
                             denom1 += 2d;
                         } while (denom1 <= 100);
+                        break;
 
                     // Equation 2
                     case 2:
@@ -100,5 +101,8 @@ public class padilla_mod5 {
 
             } while (mod5 == 0);            
         }
-    }   
+        catch (Exception e) {
+            System.out.println("Something has gone wrong my friend :o");
+        }
+    }
 }
