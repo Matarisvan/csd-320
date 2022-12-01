@@ -20,24 +20,27 @@ package module_8;
 
 public class padilla_mod8 {
     
+    // Declaring variables
+    public static double servFee = 200;
+    public static double oilChange = 75;
+    public static double tireRot = 50;
+    public static double coupon = 25;
+    
     // No parameters
-    static void yearlyService() {
-        System.out.println("\nYour yearly auto service costs you $200 per year\n");
+    public static void yearlyService() {
+        System.out.println("Your yearly auto service is " + servFee);
     }
-    
     // 1 Parameter
-    static int yearlyService(int x) {
-        return x;
-    }
-    
+    public static double yearlyService(double oilChange) {
+        return servFee + oilChange;
+    }    
     // 2 Parameters
-    static float yearlyService(float x, float y) {
-        return x + y;        
+    public static double yearlyService(double oilChange , double tireRot) {
+        return servFee + oilChange + tireRot;        
     }
-
     // 3 Parameters
-    static double yearlyService(double x, double y, double z) {
-        return x + y + z; 
+    public static double yearlyService(double oilChange, double tireRot, double coupon) {
+        return oilChange + tireRot - coupon; 
     }
     
     // Main method
@@ -49,6 +52,9 @@ public class padilla_mod8 {
 
         // Call yearlyService methods
         yearlyService();
+        yearlyService(oilChange);
+        yearlyService(oilChange, coupon);
+        yearlyService(oilChange, tireRot, coupon);
 
     }
 }
