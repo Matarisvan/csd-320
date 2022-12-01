@@ -21,10 +21,10 @@ package module_8;
 public class padilla_mod8 {
     
     // Declaring variables
-    public static double servFee = 200;
-    public static double oilChange = 75;
-    public static double tireRot = 50;
-    public static double coupon = 25;
+    public static final double servFee = 200;
+    public static final double oilChange = 75;
+    public static final double tireRot = 50;
+    public static final double coupon = 25;
     
     // No parameters
     public static void yearlyService() {
@@ -40,7 +40,7 @@ public class padilla_mod8 {
     }
     // 3 Parameters
     public static double yearlyService(double oilChange, double tireRot, double coupon) {
-        return oilChange + tireRot - coupon; 
+        return servFee + oilChange + tireRot - coupon; 
     }
     
     // Main method
@@ -48,13 +48,13 @@ public class padilla_mod8 {
 
         // Welcome message
         System.out.println("\nHello and welcome to module 8!\nToday we will be using method overloading to find the cost of your yearly auto service visits\n");
-        System.out.println("");
+        //System.out.println("");
 
         // Call yearlyService methods
         yearlyService();
-        yearlyService(oilChange);
-        yearlyService(oilChange, coupon);
-        yearlyService(oilChange, tireRot, coupon);
+        System.out.println("1 param = " + padilla_mod8.yearlyService(oilChange));
+        System.out.println("2 param = " + padilla_mod8.yearlyService(oilChange, tireRot));
+        System.out.println("3 param = " + padilla_mod8.yearlyService(oilChange, tireRot, coupon));
 
     }
 }
