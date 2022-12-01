@@ -33,37 +33,38 @@ public class padilla_mod7 {
             int j;
 
             // Password Loop
+            System.out.println("Please enter the password you would like to test:\t");
             do {
                 passCheck = 0;
                 
                 // Get password from user
-                System.out.println("Please enter your password:\t");
+                
                 String pass = input.nextLine();
-                System.out.println("You chose \"" + pass + "\" as your password");
+                System.out.println("\nYou chose \"" + pass + "\" as your password");
                 
                 // Checks length
                 if (pass.length() > 7) {
-                    System.out.println("\nlong enough");
+                    System.out.println("\nPassword long enough?\tYes");
                     passCheck++;
                 } else {
-                    System.out.println("\nPassword too short");
+                    System.out.println("\nPassword not long enough");
                 }
 
                 // Checks Lowercase
                 String passU = pass.toUpperCase();
                 if (pass.equals(passU)) {
-                    System.out.println("You need a lowercase letter");
+                    System.out.println("You need a  Lowercase Letter");
                 } else {
-                    System.out.println("lowercase detected");
+                    System.out.println("Lowercase Letter?\tYes");
                     passCheck++;
                 }                
 
                 // Checks Uppercase
                 String passL = pass.toLowerCase();
                 if (pass.equals(passL)) {
-                    System.out.println("you need an uppercase letter");
+                    System.out.println("You need an Uppercase Letter");
                 } else {
-                    System.out.println("uppercase detected");
+                    System.out.println("Uppercase Letter?\tYes");
                     passCheck++;
                 }
 
@@ -79,10 +80,10 @@ public class padilla_mod7 {
                         }
                 }
                 if (passNum != 0) {
-                    System.out.println("number detected");
+                    System.out.println("Number?\t\t\tYes");
                     passCheck++;
                 } else {
-                    System.out.println("you need a number");
+                    System.out.println("You need a number");
                 }
 
                 // Checks all requirements
@@ -93,6 +94,7 @@ public class padilla_mod7 {
                     while (exit == 0) {
                         String passEx = input.nextLine();
                         if (passEx.equalsIgnoreCase("1")) {
+                            System.out.println("\nPlease enter a Password:");
                             exit++;
                             break;
                         } else if (passEx.equalsIgnoreCase("2")) {
@@ -102,6 +104,8 @@ public class padilla_mod7 {
                             System.out.println("\nPlease select an option\n1 = Rerun Program\n2 = Exit");
                         }
                     }
+                } else {
+                    System.out.println("\nPlease enter a password that meets the requirements:");
                 }
 
             } while (passLoop == 0);
@@ -117,7 +121,7 @@ public class padilla_mod7 {
 
         // Welcome Message
         System.out.println("\nHello and Welcome to Module 7!\nToday we will be creating and testing a password!\n");
-        System.out.println("Your password must:\nBe at least 8 characters long\nContain at least 1 letter and 1 number\nContain at least 1 uppercase letter and 1 lowercase letter\n");
+        System.out.println("Your password must include the following:\nAt least 8 Characters\nAt least 1 Number\nAt least 1 Uppercase Letter\nAt least 1 Lowercase Letter\n");
 
         // calls getPassword method
         getPassword(null);
