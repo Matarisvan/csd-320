@@ -30,6 +30,8 @@ public class padilla_mod7 {
             int passLoop = 0;
             int passCheck;
             int passNum;
+            int i;
+            int j;
 
             // Password Loop
             do {
@@ -65,45 +67,35 @@ public class padilla_mod7 {
                     passCheck++;
                 }
 
-                // Checks digit
-                passNum = 0;
+                // Checks for Number
                 char[] passD = pass.toCharArray();
-                do {
-                    if (pass.contains("0")){
-                        System.out.println("number detected");
-                        passNum++;
-                        break;
-                    } else if (pass.contains("1")) {
-                        System.out.println("number detected");
-                        passNum++;
-                        break;
-                    } else if (pass.contains("2")) {
-                        System.out.println("number detected");
-                        passNum++;
-                        break;
-                    } else {
-                        System.out.println("No number detected");
-                        passNum++;
-                        break;
-                    }
-                } while (passNum == 0);
+                j = 1;
+                passNum = 0;
+                for (i = pass.length() ; j <= i ; j++) {
+                    for(char pd : passD)
+                        if (Character.isDigit(pd)) {
+                            passNum++;
+                            break;
+                        }
+                }
+                if (passNum != 0) {
+                    System.out.println("number detected");
+                    passCheck++;
+                } else {
+                    System.out.println("you need a number");
+                }
 
+                // Checks all requirements
                 System.out.println("\nYour password has passed " + passCheck + " out of 4 requirements");
-
-
-
+                if (passCheck == 4) {
+                    passLoop++;
+                }
 
             } while (passLoop == 0);
 
         } catch (Exception e) {
             System.out.println("Oh no. Something has gone wrong :o\n");
         }
-
-
-           
-
-        
-
         
     }
 
