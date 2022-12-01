@@ -38,7 +38,6 @@ public class padilla_mod7 {
                 passCheck = 0;
                 
                 // Get password from user
-                
                 String pass = input.nextLine();
                 System.out.println("\nYou chose \"" + pass + "\" as your password");
                 
@@ -90,7 +89,7 @@ public class padilla_mod7 {
                 System.out.println("\nYour password has passed " + passCheck + " out of 4 requirements");
                 if (passCheck == 4) {
                     int exit = 0;
-                     System.out.print("\nWould you like to try another password?\n1 = Yes\n2 = No\n");
+                    System.out.print("\nWould you like to try another password?\n1 = Yes\n2 = No\n");
                     while (exit == 0) {
                         String passEx = input.nextLine();
                         if (passEx.equalsIgnoreCase("1")) {
