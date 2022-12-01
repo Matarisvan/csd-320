@@ -31,8 +31,8 @@ public class padilla_mod8 {
         System.out.println("Your yearly auto service is " + servFee);
     }
     // 1 Parameter
-    public static double yearlyService(double oilChange) {
-        return servFee + oilChange;
+    public static double yearlyService(double x) {
+        return servFee + x;
     }    
     // 2 Parameters
     public static double yearlyService(double oilChange , double tireRot) {
@@ -43,18 +43,33 @@ public class padilla_mod8 {
         return servFee + oilChange + tireRot - coupon; 
     }
     
+    // Print Prices
+    public static void prices() {
+        System.out.println("Your standard annual service fee is $" + servFee);
+        System.out.println("Additional Services are available:\n$" + (int)oilChange +" Oil Change\n$" + (int)tireRot + " Tire Rotation");
+        System.out.println("Get both for an additional discount\n");
+    }
+
+    // Test 1
+    public static void testOne(){
+        yearlyService();
+        System.out.println("Package 1 includes an oil change. Total = $" + padilla_mod8.yearlyService(oilChange));
+        System.out.println("Package 2 includes tire rotation. Total = $" + padilla_mod8.yearlyService(tireRot));
+        System.out.println("Package 3 adds tire rotation. Total = $" + padilla_mod8.yearlyService(oilChange, tireRot));
+        System.out.println("Package 4 adds a coupon. Total = $" + padilla_mod8.yearlyService(oilChange, tireRot, coupon));
+    }
+
     // Main method
     public static void main(String[] args) {
 
         // Welcome message
         System.out.println("\nHello and welcome to module 8!\nToday we will be using method overloading to find the cost of your yearly auto service visits\n");
-        //System.out.println("");
+        System.out.println("");
 
         // Call yearlyService methods
-        yearlyService();
-        System.out.println("1 param = " + padilla_mod8.yearlyService(oilChange));
-        System.out.println("2 param = " + padilla_mod8.yearlyService(oilChange, tireRot));
-        System.out.println("3 param = " + padilla_mod8.yearlyService(oilChange, tireRot, coupon));
+        prices();
+        testOne();
 
+        System.out.println("\nThank you for trying this program! :)\n");
     }
 }
