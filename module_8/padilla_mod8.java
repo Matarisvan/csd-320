@@ -35,12 +35,12 @@ public class padilla_mod8 {
         return servFee + x;
     }    
     // 2 Parameters
-    public static double yearlyService(double oilChange , double tireRot) {
-        return servFee + oilChange + tireRot;        
+    public static double yearlyService(double x , double y) {
+        return servFee + x + y;        
     }
     // 3 Parameters
-    public static double yearlyService(double oilChange, double tireRot, double coupon) {
-        return servFee + oilChange + tireRot - coupon; 
+    public static double yearlyService(double x, double y, double z) {
+        return servFee + x + y - z; 
     }
     
     // Print Prices
