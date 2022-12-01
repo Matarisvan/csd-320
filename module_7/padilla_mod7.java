@@ -24,7 +24,6 @@ public class padilla_mod7 {
     // Defining the Password Method
     static void getPassword(String password) {
         try(Scanner input = new Scanner(System.in)) {
-            System.out.println("Please enter your password:\t");
             
             // Define variables
             int passLoop = 0;
@@ -38,6 +37,7 @@ public class padilla_mod7 {
                 passCheck = 0;
                 
                 // Get password from user
+                System.out.println("Please enter your password:\t");
                 String pass = input.nextLine();
                 System.out.println("You chose \"" + pass + "\" as your password");
                 
@@ -88,16 +88,29 @@ public class padilla_mod7 {
                 // Checks all requirements
                 System.out.println("\nYour password has passed " + passCheck + " out of 4 requirements");
                 if (passCheck == 4) {
-                    passLoop++;
+                    int exit = 0;
+                     System.out.print("\nWould you like to try another password?\n1 = Yes\n2 = No\n");
+                    while (exit == 0) {
+                        String passEx = input.nextLine();
+                        if (passEx.equalsIgnoreCase("1")) {
+                            exit++;
+                            break;
+                        } else if (passEx.equalsIgnoreCase("2")) {
+                            exit++;                            
+                            passLoop++;
+                        } else {
+                            System.out.println("\nPlease select an option\n1 = Rerun Program\n2 = Exit");
+                        }
+                    }
                 }
 
             } while (passLoop == 0);
 
         } catch (Exception e) {
-            System.out.println("Oh no. Something has gone wrong :o\n");
-        }
-        
+            System.out.println("\nOh no. Something has gone wrong :o\n");
+        } 
     }
+
 
     // Main Program
     public static void main(String[] args) {
@@ -106,9 +119,11 @@ public class padilla_mod7 {
         System.out.println("\nHello and Welcome to Module 7!\nToday we will be creating and testing a password!\n");
         System.out.println("Your password must:\nBe at least 8 characters long\nContain at least 1 letter and 1 number\nContain at least 1 uppercase letter and 1 lowercase letter\n");
 
+        // calls getPassword method
         getPassword(null);
-        
-        System.out.println("\nthank you\n");
+
+        // Final Message
+        System.out.println("\nThank You for trying this Program! :)\n");
     }
     
 }
