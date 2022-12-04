@@ -118,8 +118,6 @@ public class padilla_mod8 {
             testOne();
             testTwo();
 
-            // Program Loop
-
             // Final Message
             System.out.println("\nThank you for trying this program! :)\n");
 
