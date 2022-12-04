@@ -18,6 +18,9 @@ Write a main method that will test each of these methods two times.
 
 package module_8;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class padilla_mod8 {
     
     // Declaring variables
@@ -57,19 +60,69 @@ public class padilla_mod8 {
         System.out.println("Package 2 includes tire rotation. Total = $" + padilla_mod8.yearlyService(tireRot));
         System.out.println("Package 3 adds tire rotation. Total = $" + padilla_mod8.yearlyService(oilChange, tireRot));
         System.out.println("Package 4 adds a coupon. Total = $" + padilla_mod8.yearlyService(oilChange, tireRot, coupon));
+        System.out.println("Enter \"0\" for no package.");
+    }
+
+    // Test 2
+    public static void testTwo() {
+        Scanner input = new Scanner(System.in);
+        int test2 = 0;
+        int testAns;
+        System.out.println("\nWhich package would you like?");
+        do {           
+            try {
+                testAns = input.nextInt();
+                if (testAns >= 0 || testAns < 5) {
+                    switch (testAns) {
+                        case 0:
+                            System.out.println("Your total is $" + (int)servFee);
+                            test2++;
+                            break;
+                        case 1:
+                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange));
+                            test2++;
+                            break;
+                        case 2:
+                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(tireRot));
+                            test2++;
+                            break;
+                        case 3:
+                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot));
+                            test2++;
+                            break;
+                        case 4:
+                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot, coupon));
+                            test2++;
+                            break;
+                        default:
+                            System.out.println("Please select a package or enter \"0\" for no package.");
+                    }
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("We have encountered an error");
+                break;
+            }
+        } while (test2 == 0);
+        input.close();
     }
 
     // Main method
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+            // Welcome message
+            System.out.println("\nHello and welcome to module 8!\nToday we will be using method overloading to find the cost of your yearly auto service visits\n");
+            
+            // Call yearlyService methods
+            prices();
+            testOne();
+            testTwo();
 
-        // Welcome message
-        System.out.println("\nHello and welcome to module 8!\nToday we will be using method overloading to find the cost of your yearly auto service visits\n");
-        System.out.println("");
+            // Program Loop
 
-        // Call yearlyService methods
-        prices();
-        testOne();
+            // Final Message
+            System.out.println("\nThank you for trying this program! :)\n");
 
-        System.out.println("\nThank you for trying this program! :)\n");
-    }
+        input.close();
+    } 
 }
