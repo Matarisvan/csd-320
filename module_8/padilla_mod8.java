@@ -18,7 +18,6 @@ Write a main method that will test each of these methods two times.
 
 package module_8;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class padilla_mod8 {
@@ -27,24 +26,25 @@ public class padilla_mod8 {
     public static final double servFee = 200;
     public static final double oilChange = 75;
     public static final double tireRot = 50;
-    public static final double coupon = 25;
+    public static final double coupon = 20;
     
-    // No parameters
-    public static void yearlyService() {
-        System.out.println("Your yearly auto service is " + servFee);
-    }
-    // 1 Parameter
-    public static double yearlyService(double x) {
-        return servFee + x;
-    }    
-    // 2 Parameters
-    public static double yearlyService(double x , double y) {
-        return servFee + x + y;        
-    }
-    // 3 Parameters
-    public static double yearlyService(double x, double y, double z) {
-        return servFee + x + y - z; 
-    }
+    // Parameters
+        // No parameters
+        public static void yearlyService() {
+            System.out.println("Your yearly auto service is " + servFee);
+        }
+        // 1 Parameter
+        public static double yearlyService(double x) {
+            return servFee + x;
+        }    
+        // 2 Parameters
+        public static double yearlyService(double x , double y) {
+            return servFee + x + y;        
+        }
+        // 3 Parameters
+        public static double yearlyService(double x, double y, double z) {
+            return servFee + x + y - z; 
+        }
     
     // Print Prices
     public static void prices() {
@@ -67,41 +67,32 @@ public class padilla_mod8 {
     public static void testTwo() {
         Scanner input = new Scanner(System.in);
         int test2 = 0;
-        int testAns;
+        String testAns;
         System.out.println("\nWhich package would you like?");
-        do {           
-            try {
-                testAns = input.nextInt();
-                if (testAns >= 0 || testAns < 5) {
-                    switch (testAns) {
-                        case 0:
-                            System.out.println("Your total is $" + (int)servFee);
-                            test2++;
-                            break;
-                        case 1:
-                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange));
-                            test2++;
-                            break;
-                        case 2:
-                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(tireRot));
-                            test2++;
-                            break;
-                        case 3:
-                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot));
-                            test2++;
-                            break;
-                        case 4:
-                            System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot, coupon));
-                            test2++;
-                            break;
-                        default:
-                            System.out.println("Please select a package or enter \"0\" for no package.");
-                    }
-                }
-
-            } catch (InputMismatchException e) {
-                System.out.println("We have encountered an error");
+        do {   
+            testAns = input.nextLine();
+            if (testAns.equals("0")) {
+                System.out.println("Your total is $" + (int)servFee);
+                test2++;
                 break;
+            } else if (testAns.equals("1")) {
+                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange));
+                test2++;
+                break;
+            } else if ( testAns.equals("2")) {
+                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(tireRot));
+                test2++;
+                break;
+            } else if (testAns.equals("3")) {
+                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot));
+                test2++;
+                break;
+            } else if ( testAns.equals("4")) {
+                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot, coupon));
+                test2++;
+                break;
+            }   else {
+                System.out.println("Please select a package or enter \"0\" for no package.");
             }
         } while (test2 == 0);
         input.close();
