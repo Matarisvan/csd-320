@@ -72,23 +72,23 @@ public class padilla_mod8 {
         do {   
             testAns = input.nextLine();
             if (testAns.equals("0")) {
-                System.out.println("Your total is $" + (int)servFee);
+                System.out.println("\nYour total is $" + (int)servFee);
                 test2++;
                 break;
             } else if (testAns.equals("1")) {
-                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange));
+                System.out.println("\nYour total is $" + (int)padilla_mod8.yearlyService(oilChange));
                 test2++;
                 break;
             } else if ( testAns.equals("2")) {
-                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(tireRot));
+                System.out.println("\nYour total is $" + (int)padilla_mod8.yearlyService(tireRot));
                 test2++;
                 break;
             } else if (testAns.equals("3")) {
-                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot));
+                System.out.println("\nYour total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot));
                 test2++;
                 break;
             } else if ( testAns.equals("4")) {
-                System.out.println("Your total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot, coupon));
+                System.out.println("\nYour total is $" + (int)padilla_mod8.yearlyService(oilChange, tireRot, coupon));
                 test2++;
                 break;
             }   else {
