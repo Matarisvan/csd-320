@@ -23,15 +23,6 @@ public class padilla_mod9 {
         //Welcome Message
         System.out.println("\nHello and welcome to module 9!\nToday we will be learning about Arrays and getting 4 different attributes from the array:\nMin, Max, Sum, and Average\n");
         
-        // Array method
-        ranArray(0);
-
-        
-        
-    }
-
-    // Create and fill array method
-    public static int[] ranArray(int x) {
         // Fill array with 20 random intergers between 0 - 100
         int[] myArray = new int[20];
         for (int i = 0; i < myArray.length; i++){
@@ -39,7 +30,31 @@ public class padilla_mod9 {
             System.out.println(myArray[i]);            
         }
         System.out.println("\n" + myArray.length + " = Array length");
-        return myArray;
+
+        int aMax = myArray[0];
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 100) {
+                System.out.println(myArray[i]);
+                break;
+            } else if (aMax > myArray[i]) {
+                System.out.println(myArray[i]);;
+                break;
+            }
+        }
+
+        int aMin = myArray[0];
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 0) {
+                System.out.println(myArray[i]);
+                break;
+            } else if (aMin < myArray[i]) {
+                System.out.println(myArray[i]);
+                break;
+            }
+
+        }
+
+                
     }
 
 }
