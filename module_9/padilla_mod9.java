@@ -17,11 +17,17 @@ Display this information in a readable display making the data easy to understan
 
 package module_9;
 
+import java.util.Arrays;
+
 public class padilla_mod9 {
     public static void main(String[] args){
 
         //Welcome Message
         System.out.println("\nHello and welcome to module 9!\nToday we will be learning about Arrays and getting 4 different attributes from the array:\nMin, Max, Sum, and Average\n");
+        
+        // Declare Variables
+        int aSum = 0;
+        float aAvg = 0;        
         
         // Fill array with 20 random intergers between 0 - 100
         int[] myArray = new int[20];
@@ -29,32 +35,31 @@ public class padilla_mod9 {
             myArray[i] = (int)(Math.random()*100);
             System.out.println(myArray[i]);            
         }
+        
+        // Checks Array length to ensure there are 20 integers
         System.out.println("\n" + myArray.length + " = Array length");
 
-        int aMax = myArray[0];
+        // Sort array from lowest to highest
+        Arrays.sort(myArray) ;
+        
+        // Get Min
+        System.out.println(myArray[0] + " = Min");
+        
+        // Get Max
+        System.out.println(myArray[19] + " = Max");
+
+        // Get sum
         for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] == 100) {
-                System.out.println(myArray[i]);
-                break;
-            } else if (aMax > myArray[i]) {
-                System.out.println(myArray[i]);;
-                break;
-            }
+            aSum += myArray[i];
         }
+        System.out.println(aSum + " = Sum");
 
-        int aMin = myArray[0];
-        for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] == 0) {
-                System.out.println(myArray[i]);
-                break;
-            } else if (aMin < myArray[i]) {
-                System.out.println(myArray[i]);
-                break;
-            }
-
-        }
-
-                
+        // Get Average
+        aAvg = (aSum / (float)myArray.length);
+        System.out.println(aAvg + " = Average");
+        
+        // Final Message
+        System.out.println("\nThank you for trying out this program!\n");                
     }
 
 }
