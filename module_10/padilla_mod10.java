@@ -20,5 +20,27 @@ Lastly, each array sent into the methods must be of different sizes to ensure th
 package module_10;
 
 public class padilla_mod10 {
+    public static void main(String[] args) {
+        
+
+
+
+
+    }
+
+    public static short average(short [] array){
+        return 0;
+    }
     
+    public static int average(int [] array) {
+        return 0;
+    }
+
+    public static long average(long [] array) {
+        return 0;
+    }
+
+    public static double average(double [] array) {
+        return 0;
+    }
 }
