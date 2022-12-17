@@ -85,7 +85,7 @@ public class padilla_mod9 {
                     }
                 }
                                                
-            } while (rerun == 0) ;
+        } while (rerun == 0) ;
         input.close();
 
         // Final Message
