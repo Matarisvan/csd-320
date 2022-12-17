@@ -91,8 +91,9 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];                
             }
-            System.out.println("The average for this array is " + (float) sum/array.length);
-            return (short) (sum / array.length);
+            short average = (short) (sum / array.length);
+            System.out.println("The average for this array is " + average);
+            return (average);
         }
         
         // Int Method
@@ -104,8 +105,9 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];
             }
-            System.out.println("The average for this array is " + (float) sum/array.length);
-            return (int) (sum / array.length);
+            int average = (int) (sum / array.length);
+            System.out.println("The average for this array is " + average);
+            return (average);
         }
 
         // Long Method
@@ -117,8 +119,9 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];
             }
-            System.out.println("The average for this array is " + (float) sum/array.length);
-            return (long) (sum / array.length);
+            long average = (long) (sum / array.length);
+            System.out.println("The average for this array is " + average);
+            return (average);
         }
 
         // Double Method
@@ -130,7 +133,8 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];
             }
-            System.out.println("The average for this array is " + (float) sum/array.length);
-            return (double) (sum / array.length);
+            double average = (double) (sum / array.length);
+            System.out.println("The average for this array is " + average);
+            return (average);
         }
 }
