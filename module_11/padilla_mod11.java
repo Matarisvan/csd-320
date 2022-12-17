@@ -23,6 +23,41 @@ package module_11;
 public class padilla_mod11 {
     public static void main(String[] args){
 
+        // Welcome Message
+        System.out.println("\nHello and Welcome to Module 11!\nToday we will be locating the largest element");
+
+        // Program Loop Variables
+        int rerun = 0;
+        String exit;
+
+        // Main Variables
+        int row = 4;
+        int column = 4;
+        double [][] doubleArray = new double[row][column];
+        int [][] intArray = new int[row][column];
+
+        // Array Creation
+        for (int i = 0; i < doubleArray.length; i++){
+            for (int j = 0; j < doubleArray.length; j++) {
+                doubleArray[i][j] = (double)(Math.random()*65);
+                System.out.print("[" + i + "][" + j + "] = " + doubleArray[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" ");
+
+        for (int i = 0; i < intArray.length; i++){
+            for (int j = 0; j < intArray.length; j++) {
+                intArray[i][j] = (int)(doubleArray[i][j]);
+                System.out.print("[" + i + "][" + j + "] = " + intArray[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" ");
+            
+
+        
+
 
 
 
@@ -30,6 +65,10 @@ public class padilla_mod11 {
 
 
     public static int[] locateLargest(double [][] arrayParam){
+        System.out.println("Largest Double:");
+
+
+
         return locateLargest(arrayParam);
     }
 
@@ -44,4 +83,7 @@ public class padilla_mod11 {
     public static int[] locateSmallest(int [][] arrayParam){
         return locateSmallest(arrayParam);
     }
+
+
+
 }
