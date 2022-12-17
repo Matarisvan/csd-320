@@ -15,21 +15,20 @@ public static int [] locateSmallest (int [][] arrayParam)
 
 */
 
-
-
-
 package module_11;
 
 import java.util.Scanner;
 
 public class padilla_mod11 {
+    
+    // Main method
     public static void main(String[] args){
 
         // Scanner for input
         Scanner input = new Scanner(System.in);
 
         // Welcome Message
-        System.out.println("\nHello and Welcome to Module 11!\nToday we will be locating the largest element within a 4x4 array containing randomly generated numbers between 1-64");
+        System.out.println("\nHello and Welcome to Module 11!\nToday we will be locating the largest and smallest elements within 2 arrays along with their respective locations\nThe 2 arrays contain randomly generated numbers between 1-64");
         
         // Program Loop Variables
         int rerun = 0;
@@ -40,7 +39,7 @@ public class padilla_mod11 {
            
             // Main Variables
             double [][] doubleArray = new double[4][4];
-            int [][] intArray = new int[4][4];
+            int [][] intArray = new int[5][5];
             
             // Double Array
             System.out.println("\nDouble Array:");
@@ -58,6 +57,7 @@ public class padilla_mod11 {
             locateSmallest(doubleArray);
 
             // Int Array
+            System.out.println("\nInt Array:");
             for (int i = 0; i < intArray.length; i++){
                 for (int j = 0; j < intArray.length; j++) {
                     intArray[i][j] = (int)(Math.random()*65);
@@ -66,9 +66,10 @@ public class padilla_mod11 {
                 System.out.println(" ");
             }
             System.out.println(" ");
-                
-                
-                
+
+            // Largest and Smallest overload methods for int
+            locateLargest(intArray);
+            locateSmallest(intArray);            
             
             // Loop Question
             System.out.println("\nWould you like to try this program again?");
@@ -77,18 +78,16 @@ public class padilla_mod11 {
                 if (exit.equals("1")) {
                     break;
                 } else if ( exit.equals("2")) {
+                    System.out.print("\nThank you for trying out this program!\n\n");
                     rerun++;
                     break;
                 } else {
                     System.out.println("Please select an option\n1 = Rerun Program\n2 = Exit Program");
                 }
             }
-
         } while (rerun == 0);
 
         input.close();
-        
-       
     }
 
 
@@ -111,7 +110,21 @@ public class padilla_mod11 {
     }
 
     public static int[] locateLargest(int [][] arrayParam){
-        return locateLargest(arrayParam);
+        int[] iMax = new int[2];
+        int test = 0; 
+
+        for (int i = 0; i < arrayParam.length; i++) {
+            for (int j = 0; j < arrayParam.length; j++) {            
+                if (arrayParam[i][j] > test) {
+                    test = arrayParam[i][j];
+                    iMax [0] = i;
+                    iMax [1] = j;
+                }                
+            }
+        }
+        System.out.println("The highest value in the array is " + test);
+        System.out.println("You can find it at location [" + iMax[0] + "][" + iMax[1] + "]\n" );
+        return iMax;
     }
 
     public static int[] locateSmallest(double [][] arrayParam){
@@ -133,7 +146,21 @@ public class padilla_mod11 {
     }
 
     public static int[] locateSmallest(int [][] arrayParam){
-        return locateSmallest(arrayParam);
+        int[] iMin = new int[2];
+        int test = 65; 
+
+        for (int i = 0; i < arrayParam.length; i++) {
+            for (int j = 0; j < arrayParam.length; j++) {            
+                if (arrayParam[i][j] < test) {
+                    test = arrayParam[i][j];
+                    iMin [0] = i;
+                    iMin [1] = j;
+                }                
+            }
+        }
+        System.out.println("The lowest value in the array is " + test);
+        System.out.println("You can find it at location [" + iMin[0] + "][" + iMin[1] + "]\n" );
+        return iMin;
     }
 
 
