@@ -20,56 +20,92 @@ public static int [] locateSmallest (int [][] arrayParam)
 
 package module_11;
 
+import java.util.Scanner;
+
 public class padilla_mod11 {
     public static void main(String[] args){
 
+        // Scanner for input
+        Scanner input = new Scanner(System.in);
+
         // Welcome Message
-        System.out.println("\nHello and Welcome to Module 11!\nToday we will be locating the largest element");
+        System.out.println("\nHello and Welcome to Module 11!\nToday we will be locating the largest element within a 4x4 array");
 
         // Program Loop Variables
         int rerun = 0;
         String exit;
 
-        // Main Variables
-        int row = 4;
-        int column = 4;
-        double [][] doubleArray = new double[row][column];
-        int [][] intArray = new int[row][column];
+        // Do Loop
+        do {
+           
+            // Main Variables
+            double [][] doubleArray = new double[4][4];
+            int [][] intArray = new int[4][4];
 
-        // Array Creation
-        for (int i = 0; i < doubleArray.length; i++){
-            for (int j = 0; j < doubleArray.length; j++) {
-                doubleArray[i][j] = (double)(Math.random()*65);
-                System.out.print("[" + i + "][" + j + "] = " + doubleArray[i][j] + " ");
-            }
-            System.out.println(" ");
-        }
-        System.out.println(" ");
+            // Array Creation
+                // Double Array
+                for (int i = 0; i < doubleArray.length; i++){
+                    for (int j = 0; j < doubleArray.length; j++) {
+                        doubleArray[i][j] = (double)(Math.random()*65);
+                        System.out.print("[" + i + "][" + j + "] = " + doubleArray[i][j] + " ");
+                    }
+                    System.out.println(" ");
+                }
+                System.out.println(" ");
 
-        for (int i = 0; i < intArray.length; i++){
-            for (int j = 0; j < intArray.length; j++) {
-                intArray[i][j] = (int)(doubleArray[i][j]);
-                System.out.print("[" + i + "][" + j + "] = " + intArray[i][j] + " ");
-            }
-            System.out.println(" ");
-        }
-        System.out.println(" ");
+                locateLargest(doubleArray);
+
+                // Int Array
+                for (int i = 0; i < intArray.length; i++){
+                    for (int j = 0; j < intArray.length; j++) {
+                        intArray[i][j] = (int)(Math.random()*65);
+                        System.out.print("[" + i + "][" + j + "] = " + intArray[i][j] + " ");
+                    }
+                    System.out.println(" ");
+                }
+                System.out.println(" ");
+                
+                
+                
             
+            // Loop Question
+            System.out.println("\nWould you like to try this program again?");
+            while (true) {
+                exit = input.nextLine();
+                if (exit.equals("1")) {
+                    break;
+                } else if ( exit.equals("2")) {
+                    rerun++;
+                    break;
+                } else {
+                    System.out.println("Please select an option\n1 = Rerun Program\n2 = Exit Program");
+                }
+            }
 
+        } while (rerun == 0);
+
+        input.close();
         
-
-
-
-
+       
     }
 
 
-    public static int[] locateLargest(double [][] arrayParam){
-        System.out.println("Largest Double:");
+    public static int[] locateLargest(double [][] arrayParam){        
+        int[] dMax = new int[2];
+        double test = 0; 
 
-
-
-        return locateLargest(arrayParam);
+        for (int i = 0; i < arrayParam.length; i++) {
+            for (int j = 0; j < arrayParam.length; j++) {            
+                if (arrayParam[i][j] > test) {
+                    test = arrayParam[i][j];
+                    dMax [0] = i;
+                    dMax [1] = j;
+                }                
+            }
+        }
+        System.out.println("The highest value in the array is " + test);
+        System.out.println("You can find it at location [" + dMax[0] + "][" + dMax[1] + "]\n" );
+        return dMax;
     }
 
     public static int[] locateLargest(int [][] arrayParam){
