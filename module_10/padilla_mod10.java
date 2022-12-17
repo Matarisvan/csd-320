@@ -72,6 +72,15 @@ public class padilla_mod10 {
     }
 
     // 4 Overload Methods
+        /*
+        I decided to go with random numbers between 0-25 for the tests
+        First I created the sum variable
+        Second I filled the array with random numbers ranging from 0-25
+        Third I printed each individual number in the array
+        Fourth I used "+=" to add each number to the sum for a total
+        Fifth I divided the sum by the length of array to get an average
+        Lastly I printed the average as requested on assignment
+        */ 
         
         // Short Method
         public static short average(short [] array){
@@ -80,8 +89,9 @@ public class padilla_mod10 {
             for (int i = 0; i < array.length; i++) {
                 array[i] = (short)(Math.random()*25);
                 System.out.println(array[i]);
-                sum += array[i];
+                sum += array[i];                
             }
+            System.out.println("The average for this array is " + (float) sum/array.length);
             return (short) (sum / array.length);
         }
         
@@ -94,6 +104,7 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];
             }
+            System.out.println("The average for this array is " + (float) sum/array.length);
             return (int) (sum / array.length);
         }
 
@@ -106,6 +117,7 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];
             }
+            System.out.println("The average for this array is " + (float) sum/array.length);
             return (long) (sum / array.length);
         }
 
@@ -118,6 +130,7 @@ public class padilla_mod10 {
                 System.out.println(array[i]);
                 sum += array[i];
             }
+            System.out.println("The average for this array is " + (float) sum/array.length);
             return (double) (sum / array.length);
         }
 }
