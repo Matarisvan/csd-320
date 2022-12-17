@@ -30,13 +30,13 @@ public class padilla_mod10 {
         Scanner input = new Scanner(System.in);
         
         // Welcome Message
-        System.out.println("\nHello and Welcome to Module 10!\nToday we will be overloading 4 Methods to get their averages and then display the array itself.");
+        System.out.println("\nHello and Welcome to Module 10!\nToday we will be overloading the \"average\" method 4 times to get a respective average and to display the array itself.");
         
         // Program Loop Variables
         int rerun = 0;
         String exit;
         
-        // Array Variables
+        // Array Variables with varying amounts of data
         short[] shortArray = new short[5];
         int[] intArray = new int[7];
         long[] longArray = new long[9];
@@ -79,7 +79,7 @@ public class padilla_mod10 {
         Third I printed each individual number in the array
         Fourth I used "+=" to add each number to the sum for a total
         Fifth I divided the sum by the length of array to get an average
-        Lastly I printed the average as requested on assignment
+        Lastly I printed the average as requested on assignment as well as array.length to prove that the arrays are of varying lengths
         */ 
         
         // Short Method
@@ -92,8 +92,9 @@ public class padilla_mod10 {
                 sum += array[i];                
             }
             short average = (short) (sum / array.length);
-            System.out.println("The average for this array is " + average);
-            return (average);
+            System.out.println("The average for this array is " + average); 
+            System.out.println("Array Length = " + array.length);           
+            return average;
         }
         
         // Int Method
@@ -107,7 +108,8 @@ public class padilla_mod10 {
             }
             int average = (int) (sum / array.length);
             System.out.println("The average for this array is " + average);
-            return (average);
+            System.out.println("Array Length = " + array.length);   
+            return average;
         }
 
         // Long Method
@@ -121,7 +123,8 @@ public class padilla_mod10 {
             }
             long average = (long) (sum / array.length);
             System.out.println("The average for this array is " + average);
-            return (average);
+            System.out.println("Array Length = " + array.length);   
+            return average;
         }
 
         // Double Method
@@ -135,6 +138,7 @@ public class padilla_mod10 {
             }
             double average = (double) (sum / array.length);
             System.out.println("The average for this array is " + average);
-            return (average);
+            System.out.println("Array Length = " + array.length);   
+            return average;
         }
 }
