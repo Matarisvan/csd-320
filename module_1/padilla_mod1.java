@@ -17,7 +17,7 @@ public class padilla_mod1 {
         System.out.println("This first one is:");
         System.out.println(" 4 x ( 1.0 - 1.0 / 3.0 + 1.0 / 5.0 - 1.0 / 7.0 + 1.0 / 9.0 - 1.0 / 11.0 + 1.0 / 13.0 )");
         System.out.print("The answer for this one is: ");
-        float eq1 = 4 * ( 1.01f - 1.0f / 3.0f + 1.0f / 5.0f - 1.0f / 7.0f + 1.0f / 9.0f - 1.0f / 11.0f + 1.0f / 13.0f );
+        float eq1 = 4 * ( 1.0f - 1.0f / 3.0f + 1.0f / 5.0f - 1.0f / 7.0f + 1.0f / 9.0f - 1.0f / 11.0f + 1.0f / 13.0f );
         System.out.println(eq1);
         System.out.println();
         System.out.println("The second equation is:");
@@ -34,6 +34,6 @@ The difference between the two equations is that the first one (eq1) uses the "f
 With eq1 we get the exact answer that is requested from the formula. This is because the "float" variable allows us to have decimal places after the whole number.
     This gets us an exact number without having to round down.
 With eq2 we use the "int" variable which removes the ability to have decimals thus causing the numbers being manipulated to round down. With this rounding,
-    the numbers are now not the exact numbers that we need so the equation will not be less accurate.
+    the numbers are now not the exact numbers that we need so the equation will be less accurate.
 Using float is a better method for solving equations since it allows for decimals to exist which gives you the accurate answer you are looking for
  */ 
